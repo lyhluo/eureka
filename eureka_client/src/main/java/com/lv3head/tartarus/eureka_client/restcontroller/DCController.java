@@ -11,7 +11,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-public class BaseController {
+public class DCController {
 
     @Autowired
     private DiscoveryClient discoveryClient;

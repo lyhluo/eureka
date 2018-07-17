@@ -14,6 +14,10 @@ import javax.annotation.Resource;
 @RequestMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class DcRestController {
 
+    /**
+     * 通过LoadBalancerClient接口来获取某个服务的具体实例，并根据实例信息来发起服务接口消费请求
+     *
+     */
     @Resource
     private LoadBalancerClient loadBalancerClient;
 

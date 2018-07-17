@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @author lyh
  */
+// @EnableDiscoveryClient 用来将当前应用加入到服务治理体系中
 @EnableDiscoveryClient
 @SpringBootApplication
 public class EurekaConsumerApplication {

@@ -6,12 +6,7 @@
 	<groupId>com.lv3head.tartarus</groupId>
 	<artifactId>eureka_server</artifactId>
 	<version>0.0.1</version>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-        </dependency>
-    </dependencies>
+
     <packaging>jar</packaging>
 
 	<name>eureka_server</name>
@@ -23,6 +18,13 @@
 		<version>0.0.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+	</dependencies>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

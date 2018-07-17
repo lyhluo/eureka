@@ -1,0 +1,23 @@
+# 服务消费者 Ribbon
+
+通过LoadBalancerClient接口来获取某个服务的具体实例，并根据实例信息来发起服务接口消费请求。
+但是这样的做法需要我们手工的去编写服务选取、链接拼接等繁琐的工作，对于开发人员来说非常的不友好。
+所以，这个项目我们看看Spring Cloud中针对客户端负载均衡的工具包：Spring Cloud Ribbon。
+
+Spring Cloud Ribbon是基于Netflix Ribbon实现的一套客户端负载均衡的工具。
+它是一个基于HTTP和TCP的客户端负载均衡器。它可以通过在客户端中配置ribbonServerList来设置服务端列表去轮询访问以达到均衡负载的作用。
+当Ribbon与Eureka联合使用时，ribbonServerList会被DiscoveryEnabledNIWSServerList重写，
+扩展成从Eureka注册中心中获取服务实例列表。同时它也会用NIWSDiscoveryPing来取代IPing，它将职责委托给Eureka来确定服务端是否已经启动。
+
+而当Ribbon与Consul联合使用时，ribbonServerList会被ConsulServerList来扩展成从Consul获取服务实例列表。
+同时由ConsulPing来作为IPing接口的实现。
+
+我们在使用Spring Cloud Ribbon的时候，不论是与Eureka还是Consul结合，
+都会在引入Spring Cloud Eureka或Spring Cloud Consul依赖的时候通过自动化配置来加载上述所说的配置内容，
+所以我们可以快速在Spring Cloud中实现服务间调用的负载均衡。
+
+
+
+
+PS: Spring Cloud Netflix 是SpringCloud的子项目志异, 
+包括服务发现模块eureka, 熔断器(Hystrix), 智能路由(Zuul), 客户端负载均衡(Ribbon) 
